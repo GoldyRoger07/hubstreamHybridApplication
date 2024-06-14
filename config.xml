@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.raikiris.ht" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Hubstream</name>
+    <description>Sample Apache Cordova App</description>
+    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
+        Apache Cordova Team
+    </author>
+    <content src="http://localhost/index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-navigation href="data:*" />
+    <access origin="*"/>
+     <!-- <access origin="https://192.168.0.178" subdomains="true" /> -->
+    <icon src="www/img/logo.png" platform="android" width="32" height="32" density="mdpi"/>
+</widget>

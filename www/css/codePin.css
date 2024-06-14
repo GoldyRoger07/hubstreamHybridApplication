@@ -1,0 +1,96 @@
+.input-pin-field,.input-field-invisible{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-field-invisible{
+    
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+}
+.sous-titre{
+    font-size: 18px;
+    font-weight: 700;
+    color: #565656;
+    text-align: center;
+    width: 100%;
+    /* background: #802a2a5e; */
+    display: inline-block;
+}
+.input-field-parent{
+    position: relative;
+    margin: 10px 0;
+}
+
+.input-field-parent.pop{
+    display: flex;
+  
+   
+}
+
+.input-pin-field.pop{
+    gap: 5px;
+}
+
+.input-field-invisible input{
+    width: 250px;
+    height: 45px;
+
+    opacity: 0;
+}
+
+.input-field-invisible.pop,.input-pin-field.pop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-field-invisible.pop input{
+    /* background: #000; */
+    /* opacity: 1; */
+    width: 100%;
+    height: 25px;
+}
+
+.show-hide-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-pin-field input,.show-hide-box{
+    height: 45px;
+    width: 45px;
+    border-radius: 6px;
+    outline: none;
+    font-size: 1.125rem;
+    text-align: center;
+    border: 1px solid silver;
+    color: #0d0d0d;
+}
+
+.input-pin-field input{
+    font-size: 1.7rem;
+   
+}
+
+.input-pin-field.pop input, .show-hide-box.pop{
+    height: 25px;
+    width: 25px;
+    background: transparent;
+    border: 1px solid #000;
+    color: #6e6e6e;
+   
+}
+
+.show-hide-box.pop{
+    padding: 10px;
+    font-size: 15px;
+}
+
+.input-pin-field input:last-child{
+    opacity: 0;
+}

@@ -1,0 +1,251 @@
+*{
+    font-family: 'Poppins',sans-serif;
+}
+
+:root{
+    --dark: #34495E;
+    --light: #fff;
+    --success: #ff0000;
+    --error: #ff0000;
+    --warning: #E9BD0C;
+    --info: #3498DB;
+}
+
+body{
+    overflow-x: hidden;
+  
+}
+
+#notifications{
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    z-index: 104;
+   /* background: #000; */
+
+}
+
+.dark-notification{
+    background: #141414;
+    color: #d7d7d7;
+}
+
+#notifications :where(.toast, .column){
+    display: flex;
+    align-items: center;
+}
+#notifications .toast{
+    width: 400px;
+    position: relative; 
+    overflow: hidden;
+    list-style: none;
+    border-radius: 4px;
+    padding: 16px 17px;
+    margin-bottom: 10px;
+    /* background: var(--light); */
+    justify-content: space-between;
+    animation:  show_toast 0.3s ease forwards;
+    /* animation-delay: 4s; */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes show_toast{
+    0%{
+
+        transform: translateX(100%);
+    }
+
+    40%{
+        transform: translateX(-5%);
+    }
+
+    80%{
+        transform: translateX(0%);
+    }
+
+    100%{
+        transform: translateX(-10px);
+    }
+
+}
+
+#notifications .toast.hideT{
+    animation:  hide_toast 0.3s ease forwards;
+}
+
+@keyframes  hide_toast{
+    0%{
+        transform: translateX(-10px);
+    }
+
+    40%{
+        transform: translateX(0%);
+    }
+
+    80%{
+        transform: translateX(-5%);
+    }
+
+    100%{
+        transform: translateX(calc(100% + 20px));
+    }
+
+}
+
+.toast::before{
+    position: absolute;
+    content:"";
+    height: 3px;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    animation: progress 5s linear forwards;
+}
+
+@keyframes progress{
+    100%{
+        width: 0%;
+    }
+}
+
+.toast.success::before, .btn#success{
+    background: var(--success);
+}
+
+.toast.error::before, .btn#error{
+    background: var(--error);
+}
+
+.toast.warning::before, .btn#warning{
+    background: var(--warning);
+}
+
+.toast.info::before, .btn#info{
+    background: var(--info);
+}
+
+.toast .column i{
+    font-size: 1.75rem;
+}
+
+.toast.success .column i{
+    color: var(--success);
+}
+
+.toast.error .column i{
+    color: var(--error);
+}
+
+.toast.warning .column i{
+    color: var(--warning);
+}
+
+.toast.info .column i{
+    color: var(--info);
+}
+
+.toast .column span{
+    font-size:14px;
+    margin-left: 12px;
+}
+
+.toast i:last-child{
+    color: #aeb0d7;
+    cursor: pointer;
+}
+
+.toast i:last-child:hover{
+    color: var(--dark);
+}
+
+.buttons .btn{
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+}
+
+.toast .column span{
+    color: #636262;
+    font-weight: bold;
+}
+
+/* ---------------Responsive----------------- */
+
+@media screen and (width <= 768px){
+    .toast .column span{
+        font-size: 14px;
+        margin-left: 7px;
+       
+        /* background: #000; */
+       
+    }
+}
+
+@media screen and (width <= 460px) {
+    #notifications .toast{
+        width: 100%;
+        padding: 13px 14px;
+       
+    }
+
+    .toast .column{
+        /* background: #2e883d; */
+        width: 95%;
+    }
+
+    .toast .column span{
+        font-size: 3.2vw;
+        margin-left: 7px;
+       
+        /* background: #000; */
+       
+    }
+
+    .toast .column i{
+        font-size:5vw;
+        /* background: #000; */
+    }
+
+    /* .toast{
+        background: #3b3553;
+    } */
+
+    #notifications{
+        position: fixed;
+        top: 5px;
+        bottom: 95%;
+        right: 4px;
+        width: 90%;
+        z-index: 300;
+       
+    }
+}
+@media screen and (width <= 320px) {
+    #notifications .toast{
+        width: 100%;
+        padding: 13px 14px;
+       
+    }
+
+    .toast .column span{
+        font-size: 3vw;
+        margin-left: 8px;
+        /* background: #b44d4d; */
+    }
+
+    .toast .column i{
+        font-size: 1.4rem;
+    }
+
+    #notifications{
+        position: fixed;
+        top: 25px;
+        bottom: 95%;
+        right: 2px;
+        width: 90%;
+       
+    }
+}

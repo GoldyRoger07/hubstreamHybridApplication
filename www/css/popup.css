@@ -1,0 +1,212 @@
+.popup-container,.loader-container{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #0000007c;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 300;
+    /* backdrop-filter: blur(4px); Ajustez la valeur (5px dans cet exemple) pour contrôler l'intensité du flou */
+    
+}
+
+
+
+.popup{
+    background: #0f0f0f;
+    padding: 10px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    color: #c5c5d2;
+   
+}
+
+.buttons{
+    display: flex;
+    gap: 5px;
+    margin-left: auto;
+    padding: 10px;
+}
+
+.buttons button{
+    padding: 2px 20px;
+    border-radius: 2px;
+    border:0;
+    font-weight: bold;
+}
+
+.buttons button:nth-child(1){
+    background: #f00;
+}
+
+.buttons button:nth-child(2){
+    border: 1px solid #f00;
+    color: #f00;
+    background: 0;
+}
+
+/* 
+    Popup Param Res
+*/
+
+.popup-container-generic{
+    width: 100%;
+    height: 100vh;
+    background: #0000007d;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+.popup-generic{
+    border-radius: 10px;
+    max-width: 300px;
+}
+
+
+
+.popup-generic.light{
+    background: #fff;
+}
+
+.popup-generic.dark{
+    background: #1b1b1b;
+}
+
+.popup-header-generic{
+    padding: 10px;
+}
+
+.title-generic{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.title-generic.light{
+    color: #000;
+}
+
+.title-generic.dark{
+    color: #ffffff;
+}
+
+.popup-body-generic{
+    padding: 10px;
+}
+
+
+/* .content-param-reseaux{
+
+} */
+
+
+.content-param-reseaux .update-url-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content-param-reseaux 
+.update-url-form
+.input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.content-param-reseaux 
+.update-url-form
+.input-container.dark{
+    color: #e8e6e6;
+}
+
+.content-param-reseaux 
+.update-url-form
+.input-container.light{
+    color: #2e2e2e;
+}
+
+.content-param-reseaux 
+.update-url-form
+.input-container.dark input{
+    background: #0f0f0f;
+    color: #cbcbcb;
+}
+
+.content-param-reseaux 
+.update-url-form
+.input-container.light input{
+    background: #fff;
+    color: #454545;
+}
+
+
+
+.content-param-reseaux 
+.update-url-form
+.input-container
+label{
+    /* color:#3b3b3b; */
+}
+
+.content-param-reseaux 
+.update-url-form
+.input-container
+input{
+    border-radius: 5px;
+    border: 1px solid #cbcbcb;
+    padding: 5px;
+    outline-color: #cbcbcb;
+}
+
+.content-param-reseaux 
+.update-url-form 
+.button-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.content-param-reseaux 
+.update-url-form 
+.button-container button{
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.content-param-reseaux 
+.update-url-form 
+.button-container
+ .btn-modifier{
+    background: #ff0000;
+    color: #fff;
+}
+
+
+.content-param-reseaux 
+.update-url-form 
+.button-container.dark
+ .btn-annuler{
+    color: #fff;
+    background: #262424;
+ }
+
+ .content-param-reseaux 
+.update-url-form 
+.button-container.light
+ .btn-annuler{
+    color: #000;
+    background: #d8d8d8;
+ }
+

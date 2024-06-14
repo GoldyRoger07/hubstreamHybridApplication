@@ -1,0 +1,1972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/toggleButton.css">
+    <link rel="stylesheet" href="css/dropdown.css">
+    <link rel="stylesheet" href="css/listeDeroulante.css">
+    <link rel="stylesheet" href="css/popupCompte.css">
+    <link rel="stylesheet" href="css/transfert.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/planActif.css">
+    <link rel="stylesheet" href="css/onglet.css">
+    <link rel="stylesheet" href="css/presentationContenu.css">
+    <link rel="stylesheet" href="css/codePin.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/message.css">
+    <link rel="stylesheet" href="css/globalContainer.css">
+    <link rel="stylesheet" href="css/download.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/contenu.css">
+    <link rel="stylesheet" href="css/baseLayout.css">
+    <title>Hubstream</title>
+</head>
+<body>
+    <ul id="notifications">
+    </ul>
+
+    <div class="popup-container-generic hidden" id="paramResPopupContainer">
+        <div class="popup-generic light" id="paramResPopup">
+            <div class="popup-header-generic">
+                <span class="title-generic light" id="paramResPopupHeaderTitle">
+                    Parametres
+                    
+                </span>
+            </div>
+            <div class="popup-body-generic">
+                    <div class="content-param-reseaux">
+                            <form id="paramResForm" class="update-url-form">
+                                <div class="input-container light">
+                                    <label for="paramResUrlInput" >Entrez l'url de l'Api</label>
+                                    <input type="text"
+                                    id="paramResUrlInput"
+                                     placeholder="entrez l'url"
+                                     required>
+                                </div>
+                                <div class="button-container light">
+                                    <button class="btn-modifier" id="paramResModiferBtn">Modifier</button>
+                                    <button class="btn-annuler" id="paramResAnnulerBtn" type="button">Annuler</button>
+                                </div>
+                            </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-compte-container hidden-popup">
+        <div class="popup-compte hidden-popup">
+                <div class="popup-header">
+                    <div>
+                        <div class="popup-title">
+                            Compte Hubstream
+                        </div>
+                        <button id="popup-close-btn">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="popup-body">
+                    <form id="form-modifier-compte">
+                        <div class="popup-body-line">
+                            <div class="popup-body-title">
+                                    Nom
+                            </div>
+                            <div class="popup-body-value">
+                               <input type="text" value="Gouraige" id="input-nom" placeholder="Gouraige" required>
+                            </div>
+                        </div>
+
+                        <div class="popup-body-line">
+                            <div class="popup-body-title">
+                                    Prenom
+                            </div>
+                            <div class="popup-body-value">
+                               <input type="text" value="Francesse" id="input-prenom" placeholder="Francesse" required>
+                            </div>
+                        </div>
+
+                        <div class="popup-body-line">
+                            <div class="popup-body-title">
+                                    Username
+                            </div>
+                            <div class="popup-body-value">
+                                 <input type="text" value="Raiki" id="input-username" placeholder="Raiki" required>
+                            </div>
+                        </div>
+
+                        <div class="popup-body-line">
+                            <div class="popup-body-title">
+                                    Telephone
+                            </div>
+                            <div class="popup-body-value">
+                               <input type="text" value="37297929" id="input-telephone" placeholder="37297929" required>
+                            </div>
+                        </div>
+
+                        <div class="popup-body-line">
+                            <div class="popup-body-title solde">
+                                    Points
+                            </div>
+                            <div class="popup-body-value">
+                              <div class="solde" id="div-points">
+                               5 pts
+                              </div>
+                            </div>
+                        </div>
+
+                        <div class="popup-body-line">
+                            <div class="popup-body-title solde">
+                                    Solde
+                            </div>
+                            <div class="popup-body-value">
+                              <div class="solde" id="div-solde">
+                                50 000 HTG
+                              </div>
+                            </div>
+                        </div>
+
+                        <div class="popup-body-line">
+                            <div class="popup-body-title">
+                                    Modifier le compte
+                            </div>
+                            <div class="popup-body-value">
+                               <button>
+                                    Modifier
+                               </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        </div>
+
+        <div class="popup-change-password hidden-popup">
+            <div class="popup-header">
+                <div>
+                    <div class="popup-title">
+                        Modifier son mot de passe
+                    </div>
+                    <button id="popup-cp-close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="popup-body">
+                    <form id="form-modifier-password">
+                        <div class="popup-body-line">
+                            <div class="popup-body-title">
+                                    Ancien code PIN
+                            </div>
+                           
+                                <div class="input-field-parent pop">
+                                    <div class="input-pin-field pop" id="ancien-pin-inputs">
+                                        <input type="password" minlength="1" maxlength="1" readonly>
+                                        <input type="password" minlength="1" maxlength="1" readonly>
+                                        <input type="password" minlength="1" maxlength="1" readonly>
+                                        <input type="password" minlength="1" maxlength="1" readonly>
+                                        <input type="password" minlength="1" maxlength="1" readonly>
+                                    </div>
+                                    <div class="input-field-invisible pop">
+                                        <input type="number" id="invisible-ancien-input" required>
+                                        <div class="show-hide-box pop" id="ancien-show-hide-btn">
+                                            <i class="fa-regular fa-eye-slash"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                        <div class="popup-body-line">
+                            <div class="popup-body-title">
+                                    Nouveau code PIN
+                            </div>
+                            <div class="input-field-parent pop">
+                                <div class="input-pin-field pop" id="nouveau-pin-inputs">
+                                    <input type="password" minlength="1" maxlength="1" readonly>
+                                    <input type="password" minlength="1" maxlength="1" readonly>
+                                    <input type="password" minlength="1" maxlength="1" readonly>
+                                    <input type="password" minlength="1" maxlength="1" readonly>
+                                    <input type="password" minlength="1" maxlength="1" readonly>
+                                </div>
+                                <div class="input-field-invisible pop">
+                                    <input type="number" id="invisible-nouveau-input" required>
+                                    <div class="show-hide-box pop" id="nouveau-show-hide-btn">
+                                        <i class="fa-regular fa-eye-slash"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="popup-body-line">
+                            <div class="popup-body-title">
+                                 <div class="confirm-box">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        <span>
+                                           Modifier  
+                                        </span>
+                                 </div>
+                            </div>
+                            <div class="popup-body-value">
+                               <button>
+                                    Modifier
+                               </button>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-transfert-container hidden-popup">
+        <div class="popup-transfert">
+            <div class="popup-transfert-header">
+                <div>
+                    <div class="popup-transfert-header-title">
+                        Transfert
+                    </div>
+                    <button class="popup-transfert-close-btn" >
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                    
+            </div>
+            <div class="popup-transfert-body">
+                <div class="search-result-box">
+                   
+                </div>
+                <header id="header-solde">Votre Solde: 25 HTG</header>
+
+                <div class="progress-bar">
+                    <div class="step">
+                        <p>Username</p>
+                        <div class="bullet">
+                            <span>1</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+                    
+                    <div class="step">
+                        <p>Montant</p>
+                        <div class="bullet">
+                            <span>2</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+
+                    <div class="step">
+                        <p>Transfert</p>
+                        <div class="bullet">
+                            <span>3</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+                </div>
+
+                    <div class="form-outer">
+                            <form id="form-transfert">
+                                <div class="page slidepage">
+                                  
+                                    <div class="field username-field">
+                                            <div class="label">Username</div>
+                                           <div class="search-username">
+                                                <input type="text" id="username-transfert-input" required>
+                                                
+                                           </div>
+                                    </div>
+
+                                   <div class="field nextBtn">
+                                            <button type="button">Suivant</button>
+                                   </div>
+                                </div>
+
+                                <div class="page">
+                                  
+                                    <div class="field">
+                                            <div class="label">Montant</div>
+                                            <input type="number" id="montant-transfert-input" required>
+                                    </div>
+                                    <div class="field btns">
+                                        <button class="prev-1 prev" type="button">Precedent</button>
+                                        <button class="next-1 next" type="button" >Suivant</button>
+                                    </div>
+                                </div>
+
+                                <div class="page">
+                                  
+                                    <div class="field verification">
+                                            <div class="verif-text" id="verif-username">Username: <span>Sonix</span></div>
+                                            <div class="verif-text" id="verif-montant">Montant: <span>150 HTG</span></div>
+                                          
+                                    </div>
+                                    <!-- <div class="field">
+                                        <div class="label">Montant</div>
+                                        <input type="text" required>
+                                </div> -->
+                                    <div class="field btns">
+                                        <button class="prev-2 prev" type="button">Precedent</button>
+                                        <button class="submit next" type="submit">Transfert</button>
+                                    </div>
+                                </div>
+
+
+                            </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-loader-container">
+        <div class="my-loader"></div>
+    </div>
+      
+    <div class="page " id="welcomePage">
+        <div class="welcome-content layer">
+            <div class="logo-box">
+                <img src="img/logo.png" alt="">
+                <h1>Hubstream</h1>
+            </div>
+        </div>
+          
+    </div>
+
+    <div class="page hidden" id="loginPage">
+        <div class="login-content layer">
+            <div class="newContainer">
+                
+                    <img src="img/logo.png" alt="">
+
+                <header>Welcome Back</header>
+                <form id="formLogin">
+                    <div class="input-field">
+                       <input type="text" id="usernameLogin" required>
+                       <label>Entrer votre username</label>
+                    </div>
+    
+                    <label class="sous-titre">Entrer votre code PIN</label>
+                    <div class="input-field-parent">
+                        <div class="input-pin-field" id="login-inputs">
+                            <input type="password" minlength="1" maxlength="1" readonly>
+                            <input type="password" minlength="1" maxlength="1" readonly>
+                            <input type="password" minlength="1" maxlength="1" readonly>
+                            <input type="password" minlength="1" maxlength="1" readonly>
+                            <input type="password" minlength="1" maxlength="1" readonly>
+                        </div>
+                        <div class="input-field-invisible">
+                            <input type="number" id="invisible-login-input" required>
+                            <div class="show-hide-box" id="login-show-hide-btn">
+                                <i class="fa-regular fa-eye-slash"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <!-- <button>Connexion</button> -->
+                       <p class="my-p" >Avez vous un compte ? <a id="linkInscription"  href="#inscription">S'inscrire</a></p>
+                       <p  class="url-p">Cliquez 
+                        <span id="modifierUrlBtn">ici</span>
+                        pour modifier l'url
+                       </p>
+                </form>
+            </div>
+        </div>
+       
+    </div>
+
+    <div class="page hidden" id="inscriptionPage">
+        <div class="inscription-content layer">
+            <div class="option-back" id="optionBack" >
+                <button><i class="fa-solid fa-arrow-left"></i></button>
+               <span> Se connecter</span>
+            </div>
+
+                <section class="inscription-section" id="inscriptionPart1">
+                    <div class="newContainer">
+                       
+                        <img src="img/logo.png" alt="">                       
+                         <header>Creation de votre compte</header>
+                        <form id="formInscription">
+                            <div class="input-field">
+                               <input type="text" id="nomInscription" required>
+                               <label >Entrez votre nom</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" id="prenomInscription"  required>
+                                <label >Entrez votre prenom</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="number" id="telephoneInscription" required>
+                                <label >Entrez votre numero de telephone</label>
+                            </div>
+                        
+                                <button>Suivant</button>
+                              
+                        </form>
+                    </div>
+                </section>
+
+                <section  class="inscription-section hidden" id="inscriptionPart2">
+                    <div class="newContainer">
+                        
+                        <img src="img/logo.png" alt="">                       
+                         <header>Creez un username</header>
+                        <form id="formInscription2">
+                             <div class="input-field"> 
+                                <input type="text" id="usernameInscription2" required>
+                                <label >Username</label>
+                             </div>
+                             
+                                <button>Suivant</button>
+                              
+                        </form>
+                    </div>
+                </section>
+
+                <section  class="inscription-section hidden" id="inscriptionPart3">
+                    <div class="newContainer">
+                       
+                        <img src="img/logo.png" alt="">
+                                    <header>Creez un code PIN</header>
+                        <form id="formInscription3" >
+                            <div class="input-field-parent">
+                                <div class="input-pin-field" id="inscrip-inputs">
+                                    <input type="password" minlength="1" maxlength="1" readonly>
+                                    <input type="password" minlength="1" maxlength="1" readonly>
+                                    <input type="password" minlength="1" maxlength="1" readonly>
+                                    <input type="password" minlength="1" maxlength="1" readonly>
+                                    <input type="password" minlength="1" maxlength="1" readonly>
+                                </div>
+                                <div class="input-field-invisible">
+                                    <input type="number" id="invisible-inscrip-input" required>
+                                    <div class="show-hide-box" id="inscrip-show-hide-btn">
+                                        <i class="fa-regular fa-eye-slash"></i>
+                                    </div>
+                                </div>
+                            </div>
+                              <button id="submitBtn3" class="submit-btn3"  data-toastText="Bravo,vous avez creer votre compte">Enregistrer</button>
+                             
+                        </form>
+                        
+                    </div>
+                </section>
+
+
+        </div>
+    </div>
+
+    <div class="page hidden  accueil " id="accueilPage">
+                <div class="global-container layer">
+                        <div class="side-nav" id="sideNav">
+                                <nav>
+                                    <div class="logo-box">
+                                            <img src="img/logo.png" alt="">
+                                            <h1>Hubstream</h1>
+                                    </div>
+                                    <div class="nav-search-box">
+                                        <div class="input-container search-bottom-radius" id="navInputContainer">
+                                            <img src="img/search.svg">
+                                            <input type="text" id="navSearch" placeholder="Tapez quelque chose">
+                                        </div>
+                                        <div class="result-box hidden">
+                                           
+                                            <!-- <div class="result-item">
+                                                <span>Film</span>
+                                                John Wick Chapitre 4 
+                                            </div>  -->
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="links-box">
+                                            <div class="link-item active" id="homeLinkItem">
+                                                <i class="fa-solid fa-house"></i>
+                                                <span class="nav-links">Accueil</span>
+                                            </div>
+                                            <div class="link-item" id="filmsLinkItem">
+                                                <i class="fa-solid fa-film"></i>
+                                                <span class="nav-links">Films</span>
+                                            </div>
+                                            <div class="link-item" id="seriesLinkItem">
+                                                <i class="fa-solid fa-tv"></i>
+                                                <span class="nav-links">Series</span>
+                                            </div>
+                                            <div class="link-item" id="animesLinkItem">
+                                                <i class="fa-solid fa-circle-play"></i>
+                                                <span class="nav-links">Animes</span>
+                                            </div>
+                                            <div class="link-item" id="plansLinkItem">
+                                                <i class="fa-solid fa-list"></i>
+                                                <span class="nav-links">Plans</span>
+                                            </div>
+                                            <div class="link-item" id="downloadsLinkItem">
+                                                <i class="fa-solid fa-download"></i>
+                                                <span class="nav-links">Telechargements</span>
+                                            </div>
+
+                                    </div>
+                                    <div class="user-box">
+                                        <div class="user-menu-popup">
+                                            <div class="menu-popup" data-etat="close">
+                                                <div class="menu-item" id="modifier-compte-btn">
+                                                    <i class="fa-solid fa-id-badge"></i>
+                                                    <div class="titre">
+                                                        Voir ou modifier son compte
+                                                    </div>
+                                                </div>
+                                                <div class="menu-item" id="modifier-password-btn">
+                                                    <i class="fa-solid fa-lock"></i>
+                                                    <div class="titre">
+                                                       Modifier son code PIN
+                                                    </div>
+                                                </div>
+                                                <div class="menu-item" id="transfert-btn">
+                                                    <i class="fa-solid fa-paper-plane"></i>
+                                                    <div class="titre">
+                                                       Effectuer un transfert
+                                                    </div>
+                                                </div>
+                                                <div class="menu-item" id="parametres-reseaux-btn">
+                                                    <i class="fa-solid fa-gear"></i>
+                                                    <div class="titre">
+                                                       Parametres
+                                                    </div>
+                                                </div>
+                                                <div class="menu-item top-line" id="lienDeconnection" onclick="deconnexion()">
+                                                    <!-- <i class="fa-solid fa-arrow-right-from-bracket"></i> -->
+                                                    <i class="fa-solid fa-power-off"></i>
+                                                    <div class="titre">
+                                                       Deconnexion
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="user-btn" id="user-btn">
+                                                <div class="user-btn-logo" >
+                                                    GF
+                                                </div>
+                                                <div class="titre" id="div-idCompte"  th:attr="data-id=${session.idCompte}">
+                                                   Gouraige Francesse
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </nav>
+                                <div class="close-btn-container">
+                                    <button id="navCloseBtn">
+                                            
+                                    </button>
+                                </div>
+                        </div>
+                        <div class="main-content">
+                               <header>
+                                        <div class="logo-box">
+                                                <img src="img/logo.png">
+                                                <h1>Hubstream</h1>
+                                        </div>
+                                        <button class="menu-btn"  id="menuBtn">
+                                            <img src="img/bar.png">
+                                        </button>
+                               </header>
+                               <div class="home-content inner-content" id="homeContent">
+                                    
+                                <section class="top-section">
+                                    <h4 id="lastWinnerTitle">Meilleur utilisateur du mois de mars</h4>
+                                    <div class="top-list">
+                                        <div class="list-item" id="lastWinnerListItem">
+                                            <div class="right-box">
+                                                <i class="fa-solid fa-circle-user"></i>
+                                                <span class="username">wil55</span>
+                                            </div>
+                                            <div class="left-box">
+                                                <span class="points">1</span>x
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                
+                                <div class="contenu-container">
+                                        <div class="contenu-header">
+                                                <span>Films en streaming vf</span>
+                                                <button onclick="showFilms()">Voir plus</button>
+                                        </div>
+                                        <div class="contenus" id="homeFilmContenuContainer">
+                                           
+                                            <!-- <div class="contenu-card">
+                                                <span class="version">VF</span>
+                                                <span class="annee" >2023</span>
+                                                    
+                                                <img src="img/film-365-Days.jpg">
+                             
+                                               
+                                                 <div class="titre-card">
+                                                    365 Dni
+                                                 </div>
+                                            </div> -->
+                                            <div class="contenu-card">
+                                               
+                                                    
+                                                <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                <div class="skeleton img-skeleton"></div>
+                                               
+                                                 <div class="titre-card">
+                                                   <div class="skeleton skeleton-text">
+
+                                                   </div>
+                                                 </div>
+                                            </div>
+
+                                            <div class="contenu-card">
+                                               
+                                                    
+                                                <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                <div class="skeleton img-skeleton"></div>
+                                               
+                                                 <div class="titre-card">
+                                                   <div class="skeleton skeleton-text">
+
+                                                   </div>
+                                                 </div>
+                                            </div>
+
+                                            <div class="contenu-card">
+                                               
+                                                    
+                                                <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                <div class="skeleton img-skeleton"></div>
+                                               
+                                                 <div class="titre-card">
+                                                   <div class="skeleton skeleton-text">
+
+                                                   </div>
+                                                 </div>
+                                            </div>
+
+                                            <div class="contenu-card">
+                                               
+                                                    
+                                                <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                <div class="skeleton img-skeleton"></div>
+                                               
+                                                 <div class="titre-card">
+                                                   <div class="skeleton skeleton-text">
+
+                                                   </div>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                </div>
+
+                                <div class="contenu-container" >
+                                        <div class="contenu-header">
+                                                <span>Series en streaming vf</span>
+                                                <button onclick="showSeries()">Voir plus</button>
+                                        </div>
+                                        <div class="contenus" id="homeSerieContenuContainer">
+                                            <div class="contenu-card">
+                                               
+                                                    
+                                                <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                <div class="skeleton img-skeleton"></div>
+                                               
+                                                 <div class="titre-card">
+                                                   <div class="skeleton skeleton-text">
+
+                                                   </div>
+                                                 </div>
+                                            </div>
+                                            
+
+                                            <div class="contenu-card">
+                                               
+                                                    
+                                                <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                <div class="skeleton img-skeleton"></div>
+                                               
+                                                 <div class="titre-card">
+                                                   <div class="skeleton skeleton-text">
+
+                                                   </div>
+                                                 </div>
+                                            </div>
+
+                                            <div class="contenu-card">
+                                               
+                                                    
+                                                <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                <div class="skeleton img-skeleton"></div>
+                                               
+                                                 <div class="titre-card">
+                                                   <div class="skeleton skeleton-text">
+
+                                                   </div>
+                                                 </div>
+                                            </div>
+
+                                            <div class="contenu-card">
+                                               
+                                                    
+                                                <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                <div class="skeleton img-skeleton"></div>
+                                               
+                                                 <div class="titre-card">
+                                                   <div class="skeleton skeleton-text">
+
+                                                   </div>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                </div>
+
+                                <div class="contenu-container" >
+                                        <div class="contenu-header">
+                                                <span>Animes en streaming vf</span>
+                                                <button onclick="showAnimes()">Voir plus</button>
+                                        </div>
+                                        <div class="contenus" id="homeAnimeContenuContainer">
+                                            <div class="contenu-card">
+                                               
+                                                    
+                                                <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                <div class="skeleton img-skeleton"></div>
+                                               
+                                                 <div class="titre-card">
+                                                   <div class="skeleton skeleton-text">
+
+                                                   </div>
+                                                 </div>
+                                            </div>
+
+                                            <div class="contenu-card">
+                                               
+                                                    
+                                                <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                <div class="skeleton img-skeleton"></div>
+                                               
+                                                 <div class="titre-card">
+                                                   <div class="skeleton skeleton-text">
+
+                                                   </div>
+                                                 </div>
+                                            </div>
+
+                                            <div class="contenu-card">
+                                               
+                                                    
+                                                <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                <div class="skeleton img-skeleton"></div>
+                                               
+                                                 <div class="titre-card">
+                                                   <div class="skeleton skeleton-text">
+
+                                                   </div>
+                                                 </div>
+                                            </div>
+
+                                            <div class="contenu-card">
+                                               
+                                                    
+                                                <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                <div class="skeleton img-skeleton"></div>
+                                               
+                                                 <div class="titre-card">
+                                                   <div class="skeleton skeleton-text">
+
+                                                   </div>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                </div>
+
+                                    <section class="top-section">
+                                        <h4 id="top5UsersTitle">Top 5 utilisateurs potentiel pour les cadeaux du mois de mai</h4>
+                                        
+
+                                        <div class="top-list" id="top5List">
+                                               
+                                                <!-- <div class="list-item">
+                                                    <div class="right-box">
+                                                        <i class="fa-solid fa-circle-user"></i>
+                                                        <span class="username">chadoo</span>
+                                                    </div>
+                                                    <div class="left-box">
+                                                        <span class="points">28</span> pts
+                                                    </div>
+                                                </div> -->
+                                        </div>
+                                    </section>
+
+                                    
+                               </div>  
+
+                               <div class="downloads-content hidden inner-content" id="downloadsContent"> 
+                                <div class="container">
+
+                                    <div class="container-onglets">
+                                       
+                                        <div class="onglets activeOnglet" id="ongletFilmsDownload" data-anim="3">Films</div>
+                                        <div class="onglets " id="ongletSeriesDownload" data-anim="4">Series</div>
+                                        <div class="onglets " id="ongletAnimesDownload" data-anim="5">Animes</div>
+                                    </div>
+        
+                                   
+                                    <div class="contenu-p activeContenu" id="filmsDownloadContenu" data-anim="3">
+                                      
+                                       <div class="option-delete-container">
+                                            <span>Autoriser la suppression</span>
+                                            <div class="delete-switch-container">
+                                                <input class="input-toggle" type="checkbox" id="checkDeleteFilms">
+                                                <label for="checkDeleteFilms" class="button-toggle"></label>
+                                            </div>
+                                       </div>
+                                       <div class="contenus-download-container" id="filmsDownloadContainer">
+                                            
+                                            <div class="the-container">
+                                                <!-- <div class="download-item ">
+                                                    <div class="first-section">
+                                                        <div class="icon-container">
+                                                                <i class="fa-solid fa-play"></i>
+                                                        </div>
+                                                            <div class="details-section">
+                                                                <span class="download-title-item">${telechargement.titre}</span>
+                                                                <div>
+                                                                    <span class="download-total-capacity">0 Mo</span>
+                                                                    <div class="point-separator"></div>
+                                                                    <span class="download-pourcentage">${telechargement.etat}</span>  
+                                                                </div>
+                                                             </div>
+                                                    </div>
+                                                    <button class="disabled">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="download-item">
+                                                    <div class="first-section">
+                                                        <div class="icon-container">
+                                                                <i class="fa-solid fa-play"></i>
+                                                        </div>
+                                                            <div class="details-section">
+                                                                <span class="download-title-item">${telechargement.titre}</span>
+                                                                <div>
+                                                                    <span class="download-total-capacity">0 Mo</span>
+                                                                    <div class="point-separator"></div>
+                                                                    <span class="download-pourcentage">${telechargement.etat}</span>  
+                                                                </div>
+                                                             </div>
+                                                    </div>
+                                                    <button class="disabled">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </button>
+                                                </div> -->
+                                            </div>
+
+
+                                       </div> 
+                                    </div> 
+        
+                                    <div class="contenu-p" id="seriesDownloadContenu" data-anim="4">
+                                        <div class="option-delete-container">
+                                            <span>Autoriser la suppression</span>
+                                            <div class="delete-switch-container">
+                                                <input class="input-toggle" type="checkbox" id="checkDeleteSeries">
+                                                <label for="checkDeleteSeries" class="button-toggle"></label>
+                                            </div>
+                                       </div>
+                                        <div class="contenus-download-container" id="seriesDownloadContainer">
+                                            <div class="the-container">
+                                                
+                                            </div>
+                                       </div> 
+                                       
+                                    </div>
+
+                                    <div class="contenu-p" id="animesDownloadContenu" data-anim="5">
+                                        <div class="option-delete-container">
+                                            <span>Autoriser la suppression</span>
+                                            <div class="delete-switch-container">
+                                                <input class="input-toggle" type="checkbox" id="checkDeleteAnimes">
+                                                <label for="checkDeleteAnimes" class="button-toggle"></label>
+                                            </div>
+                                       </div>
+                                        
+                                        <div class="contenus-download-container" id="animesDownloadContainer">
+                                            <div class="the-container">
+                                                
+                                            </div>
+                                       </div> 
+                                    </div>
+        
+                                    
+        
+                                   
+        
+        
+                                </div>
+                               </div>
+
+                               <div class="contenus-content hidden inner-content" data-linkItem="homeLinkItem" data-vuePrecedent="homeContent" id="filmsContent">
+                                        <div class="contenu-search-box">
+                                            <span>Films en streaming vf</span>
+                                            <div class="input-container">
+                                                <img src="img/search.svg" >
+                                                <input type="text" id="inputFilmsContentSearch" placeholder="Tapez un nom,un genre ou une annee ">
+                                            </div>
+                                    
+                                        </div>
+
+                                        <div class="contenus-container" id="filmsContentContainer">
+                                            <div class="child-content" id="filmsChildContent" data-hasSkeleton="yes">
+                                                <div class="contenu-card">
+                                               
+                                                    
+                                                    <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                    <div class="skeleton img-skeleton"></div>
+                                                   
+                                                     <div class="titre-card">
+                                                       <div class="skeleton skeleton-text">
+    
+                                                       </div>
+                                                     </div>
+                                                </div>
+    
+                                                <div class="contenu-card">
+                                                   
+                                                        
+                                                    <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                    <div class="skeleton img-skeleton"></div>
+                                                   
+                                                     <div class="titre-card">
+                                                       <div class="skeleton skeleton-text">
+    
+                                                       </div>
+                                                     </div>
+                                                </div>
+
+                                                <div class="contenu-card">
+                                               
+                                                    
+                                                    <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                    <div class="skeleton img-skeleton"></div>
+                                                   
+                                                     <div class="titre-card">
+                                                       <div class="skeleton skeleton-text">
+    
+                                                       </div>
+                                                     </div>
+                                                </div>
+    
+                                                <div class="contenu-card">
+                                                   
+                                                        
+                                                    <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                    <div class="skeleton img-skeleton"></div>
+                                                   
+                                                     <div class="titre-card">
+                                                       <div class="skeleton skeleton-text">
+    
+                                                       </div>
+                                                     </div>
+                                                </div>
+    
+                                                <div class="contenu-card">
+                                                   
+                                                        
+                                                    <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                    <div class="skeleton img-skeleton"></div>
+                                                   
+                                                     <div class="titre-card">
+                                                       <div class="skeleton skeleton-text">
+    
+                                                       </div>
+                                                     </div>
+                                                </div>
+    
+                                                <div class="contenu-card">
+                                                   
+                                                        
+                                                    <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                    <div class="skeleton img-skeleton"></div>
+                                                   
+                                                     <div class="titre-card">
+                                                       <div class="skeleton skeleton-text">
+    
+                                                       </div>
+                                                     </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="child-content hidden" id="searchFilmsChildContent"></div>
+                                            <div class="watcher" id="filmsWatcher"></div>
+                                        </div>
+                                       
+                               </div>
+
+                               <div class="contenus-content hidden inner-content" data-linkItem="homeLinkItem" data-vuePrecedent="homeContent" id="seriesContent">
+                                <div class="contenu-search-box">
+                                    <span>Series en streaming vf</span>
+                                    <div class="input-container">
+                                        <img src="img/search.svg" >
+                                        <input type="text" id="inputSeriesContentSearch" placeholder="Tapez un nom,un genre ou une annee ">
+                                    </div>
+                            
+                                </div>
+
+                                <div class="contenus-container" id="seriesContentContainer">
+                                    
+
+                                    <div class="child-content" id="seriesChildContent" data-hasSkeleton="yes">
+                                        <div class="contenu-card">
+                                               
+                                                    
+                                            <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                            <div class="skeleton img-skeleton"></div>
+                                           
+                                             <div class="titre-card">
+                                               <div class="skeleton skeleton-text">
+
+                                               </div>
+                                             </div>
+                                        </div>
+
+                                        <div class="contenu-card">
+                                               
+                                                    
+                                            <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                            <div class="skeleton img-skeleton"></div>
+                                           
+                                             <div class="titre-card">
+                                               <div class="skeleton skeleton-text">
+
+                                               </div>
+                                             </div>
+                                        </div>
+
+                                        <div class="contenu-card">
+                                               
+                                                    
+                                            <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                            <div class="skeleton img-skeleton"></div>
+                                           
+                                             <div class="titre-card">
+                                               <div class="skeleton skeleton-text">
+
+                                               </div>
+                                             </div>
+                                        </div>
+
+                                        <div class="contenu-card">
+                                           
+                                                
+                                            <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                            <div class="skeleton img-skeleton"></div>
+                                           
+                                             <div class="titre-card">
+                                               <div class="skeleton skeleton-text">
+
+                                               </div>
+                                             </div>
+                                        </div>
+
+                                        <div class="contenu-card">
+                                           
+                                                
+                                            <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                            <div class="skeleton img-skeleton"></div>
+                                           
+                                             <div class="titre-card">
+                                               <div class="skeleton skeleton-text">
+
+                                               </div>
+                                             </div>
+                                        </div>
+
+                                        <div class="contenu-card">
+                                           
+                                                
+                                            <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                            <div class="skeleton img-skeleton"></div>
+                                           
+                                             <div class="titre-card">
+                                               <div class="skeleton skeleton-text">
+
+                                               </div>
+                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="child-content hidden" id="searchSeriesChildContent"></div>
+                                    <div class="watcher" id="seriesWatcher"></div>
+
+                                </div>
+                               </div>
+
+                               <div class="contenus-content hidden inner-content" data-linkItem="homeLinkItem" data-vuePrecedent="homeContent" id="animesContent">
+                                <div class="contenu-search-box">
+                                    <span>Animes en streaming vf</span>
+                                    <div class="input-container">
+                                        <img src="img/search.svg" >
+                                        <input type="text" id="inputAnimesContentSearch" placeholder="Tapez un nom,un genre ou une annee ">
+                                    </div>
+                            
+                                </div>
+
+                                <div class="contenus-container" id="animesContentContainer">
+                                   <!-- <div class="contenu-card">
+                                        <span class="version">VF</span>
+                                        <span class="annee" >2023</span>
+                                            
+                                        <img src="img/film-john-wick-4.jpg">
+                     
+                                       
+                                         <div class="titre-card" >
+                                             John Wick 4
+                                         </div>
+                                    </div> -->
+                                        <div class="child-content" id="animesChildContent" data-hasSkeleton="yes">
+                                            <div class="contenu-card">
+                                               
+                                                    
+                                                <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                <div class="skeleton img-skeleton"></div>
+                                               
+                                                 <div class="titre-card">
+                                                   <div class="skeleton skeleton-text">
+
+                                                   </div>
+                                                 </div>
+                                            </div>
+
+                                            <div class="contenu-card">
+                                               
+                                                    
+                                                <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                <div class="skeleton img-skeleton"></div>
+                                               
+                                                 <div class="titre-card">
+                                                   <div class="skeleton skeleton-text">
+
+                                                   </div>
+                                                 </div>
+                                            </div>
+
+                                            <div class="contenu-card">
+                                               
+                                                    
+                                                <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                <div class="skeleton img-skeleton"></div>
+                                               
+                                                 <div class="titre-card">
+                                                   <div class="skeleton skeleton-text">
+
+                                                   </div>
+                                                 </div>
+                                            </div>
+
+                                            <div class="contenu-card">
+                                               
+                                                    
+                                                <!-- <img class="skeleton" src="img/film-365-Days.jpg"> -->
+                                                <div class="skeleton img-skeleton"></div>
+                                               
+                                                 <div class="titre-card">
+                                                   <div class="skeleton skeleton-text">
+
+                                                   </div>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="child-content hidden" id="searchAnimesChildContent"></div>
+
+                                    <div class="watcher" id="animesWatcher"></div>
+            
+                                </div>
+
+                                
+                                
+                               </div>
+
+                               <div class="film-content hidden  inner-content" data-linkItem="filmsLinkItem" data-vuePrecedent="filmsContent" id="filmContent">
+                                <button class="download-btn" id="downloadFilmBtn">
+
+                                   <i class="fa-solid fa-download"></i>
+                                </button>
+                                <div class="presentation-container">
+                                    <div class="info-container">
+                                   <div class="titre" id="firstTitleFilmValue" >How To Sell Drugs Online (fast)</div>
+                                  
+                                   <img id="imageCoverFilmValue" src="#" >
+                                   <div class="info-detail">
+                                       <div class="info-block">
+                                           <span>Annee</span>
+                                           <div class="value" id="anneeFilmValue">2023</div>
+                                       </div>
+                                       <div class="info-block">
+                                          <span>Temps</span>
+                                          <div class="value" id="tempsFilmValue">2hr49min</div>
+                                       </div>
+                                       <div class="info-block">
+                                          <span>Genre</span>
+                                          <div class="value" id="genreFilmValue">Action,Horreur</div>
+                                       </div>
+   
+                                       <div class="info-block">
+                                          <span>Realisateur</span>
+                                          <div class="value" id="realisateurFilmValue">Johnny Black</div>
+                                       </div>
+                                       <div class="info-block">
+                                           <span>Cast</span>
+                                           <div class="value" id="castFilmValue">Johnny Black</div>
+                                        </div>
+                                       <div class="info-block">
+                                           <span>Pays</span>
+                                           <div class="value" id="paysFilmValue">U.S.A</div>
+                                       </div>
+                               </div>
+                               
+                                    </div>
+                                    
+                           </div>
+
+                           
+                           
+                                    <div class="episode-container">
+                                        <header>
+                                            <span  id="secondTitleFilmValue" >
+                                                How To Sell Drugs Online (Fast) Saison 1 épisode 2
+                                            </span>
+                                        </header>
+                                    
+                                        <!-- <video  id="baliseVideo" src="vid/myVideo.mp4" th:src="@{'http://192.168.0.178:8080/vid/film/'+${film.fichierVideo.name}+'/'+${session.idCompte}}" th:poster="@{'/img/'+${film.imageCover.idStreamFile}}"  controlsList="nodownload" type="video/mp4" controls></video> -->
+                                        <video  id="baliseFilmVideo" poster="img/logoVideo.png"  controlsList="nodownload"   type="video/mp4"  controls>
+                                                
+                                        </video>
+            
+                                    </div>
+
+                                    <div class="description-container film-description">
+                                            <div class="titre">Description du film</div>
+                                            <p  id="descriptionFilmValue">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ratione nesciunt autem, numquam, ad quidem ipsam tenetur eligendi a enim voluptatibus mollitia impedit dignissimos similique saepe voluptate maxime sequi harum?
+                                            Obcaecati suscipit, sequi, excepturi fugiat eius molestias non cupiditate nobis omnis ratione modi ab nostrum dolorum vitae. Laboriosam accusantium accusamus deleniti neque eum, placeat praesentium nobis molestias id omnis quae.</p>
+                                    </div>
+                               </div>
+
+                               <div class="serie-content hidden inner-content" data-linkItem="seriesLinkItem" data-vuePrecedent="seriesContent" id="serieContent">
+                                <div class="presentation-container">
+                                    <div class="info-container">
+                                        <div class="titre" th:text="'Regarder la serie '+${serie.titre}">How To Sell Drugs Online (fast)</div>
+                                       
+                                            <img src="#" alt="imageCover">
+                                            <div class="info-detail">
+                                                <div class="info-block">
+                                                    <span >Annee</span>
+                                                   <span >2023</span>
+                                                </div>
+                                                <div class="info-block">
+                                                   <span>Temps</span>
+                                                   <span>2hr40min</span>
+                                                </div>
+                                                <div class="info-block">
+                                                   <span>Genre</span>
+                                                   <span >2023</span>
+                                                </div>
+                                                <div class="info-block">
+                                                    <span>Cast</span>
+                                                    <span >2023</span>
+                                                </div>
+                                                <div class="info-block">
+                                                   <span>Realisateur</span>
+                                                   <span >2023</span>
+                                                </div>
+                                                <div class="info-block">
+                                                    <span>Pays</span>
+                                                    <span>2023</span>
+                                                </div>
+                                            </div>
+                                    </div>
+                                   
+                                </div>
+
+                                <div class="description-container description-serie">
+                                    <div class="titre">Description de la serie</div>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ratione nesciunt autem, numquam, ad quidem ipsam tenetur eligendi a enim voluptatibus mollitia impedit dignissimos similique saepe voluptate maxime sequi harum?
+                                    Obcaecati suscipit, sequi, excepturi fugiat eius molestias non cupiditate nobis omnis ratione modi ab nostrum dolorum vitae. Laboriosam accusantium accusamus deleniti neque eum, placeat praesentium nobis molestias id omnis quae.</p>
+                                </div>
+        
+                                <div class="saisons-container">
+                                    <header>
+                                        <span>Toutes les saisons</span>
+                                    </header>
+                                    <div class="separator"></div>
+                                    <main id="saisonsItemContainer">
+                                            <button class="saison-item" th:each="saison :${saisons}">
+                                               <a href="#" th:href="@{'/hubstream/serie/saison/'+${saison.idSaison}}" th:text="${saison.titre}">saison 1</a>
+                                            </button>
+                                           
+        
+                                    </main>
+                                </div>
+                               </div>
+
+                               <div class="serie-se-content hidden inner-content" data-linkItem="seriesLinkItem" data-vuePrecedent="serieContent" id="serieSeContent">
+                                <div class="presentation-container">
+                                    <div class="info-container">
+                                        <div class="titre" th:text="'Regarder la serie '+${serie.titre}">How To Sell Drugs Online (fast)</div>
+                                       
+                                            <img src="../static/imgs/serie-how-to-sell-drugs-online-(fast).jpg" th:src="@{'/img/'+${serie.imageCover.idStreamFile}}" alt="imageCover">
+                                            <div class="info-detail">
+                                                <div class="info-block">
+                                                    <span >Annee</span>
+                                                   <span th:text="${serie.annee}">2023</span>
+                                                </div>
+                                                <div class="info-block">
+                                                   <span>Temps</span>
+                                                   <span th:text="${serie.temps}">2hr40min</span>
+                                                </div>
+                                                <div class="info-block">
+                                                   <span>Genre</span>
+                                                   <span th:text="${serie.genre}">2023</span>
+                                                </div>
+                                                <div class="info-block">
+                                                    <span>Cast</span>
+                                                     Macximilian Mundt,Danilo Kamperidis,Lena Klenke
+                                                </div>
+                                                <div class="info-block">
+                                                   <span>Realisateur</span>
+                                                   <span th:text="${serie.Realisateur}">2023</span>
+                                                </div>
+                                                <div class="info-block">
+                                                    <span>Pays</span>
+                                                    <span th:text="${serie.pays}">2023</span>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    
+                                    
+                                </div>
+
+                                <div class="description-container">
+                                    <div class="titre">Description de la serie</div>
+                                    <p th:text="${serie.descriptionSerie}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ratione nesciunt autem, numquam, ad quidem ipsam tenetur eligendi a enim voluptatibus mollitia impedit dignissimos similique saepe voluptate maxime sequi harum?
+                                    Obcaecati suscipit, sequi, excepturi fugiat eius molestias non cupiditate nobis omnis ratione modi ab nostrum dolorum vitae. Laboriosam accusantium accusamus deleniti neque eum, placeat praesentium nobis molestias id omnis quae.</p>
+                                </div>
+        
+                                <div class="saisons-container">
+                                    <header>
+                                        <span th:text="'Liste des episodes de la '+${saison.titre}+' de '+${serie.titre}">
+                                            Liste des episodes de How To Sell Drugs Online (Fast) Saison 1 
+                                        </span>
+                                    </header>
+                                    <div class="separator"></div>
+                                    <main id="episodesItemContainer">
+                                            <button class="episode-item" th:each="episode :${episodes}">
+                                                <a href="#" th:href="@{'/hubstream/serie/'+${saison.idSaison}+'/'+${episode.numero}}" th:text="${episode.titre}">episode 1</a>
+                                            </button> 
+                                    </main>
+                                </div>
+                               </div>
+
+                               <div class="serie-episode-content hidden inner-content" data-linkItem="seriesLinkItem" data-vuePrecedent="serieSeContent" id="serieEpisodeContent">
+                                <button class="download-btn" id="downloadSerieEpisodeBtn">
+
+                                    <i class="fa-solid fa-download"></i>
+                                 </button>
+                                <div class="presentation-container">
+                                    <div class="info-container">
+                                        <div class="titre" th:text="'Regarder la serie '+${serie.titre}">How To Sell Drugs Online (fast)</div>
+                                       
+                                            <img src="../static/imgs/serie-how-to-sell-drugs-online-(fast).jpg" th:src="@{'/img/'+${serie.imageCover.idStreamFile}}" alt="imageCover">
+                                            <div class="info-detail">
+                                                <div class="info-block">
+                                                    <span >Annee</span>
+                                                   <span th:text="${serie.annee}">2023</span>
+                                                </div>
+                                                <div class="info-block">
+                                                   <span>Temps</span>
+                                                   <span th:text="${serie.temps}">2hr40min</span>
+                                                </div>
+                                                <div class="info-block">
+                                                   <span>Genre</span>
+                                                   <span th:text="${serie.genre}">2023</span>
+                                                </div>
+                                                <div class="info-block">
+                                                    <span>Cast</span>
+                                                     Macximilian Mundt,Danilo Kamperidis,Lena Klenke
+                                                </div>
+                                                <div class="info-block">
+                                                   <span>Realisateur</span>
+                                                   <span th:text="${serie.Realisateur}">2023</span>
+                                                </div>
+                                                <div class="info-block">
+                                                    <span>Pays</span>
+                                                    <span th:text="${serie.pays}">2023</span>
+                                                </div>
+                                            </div>
+                                    </div>
+                                   
+                                    
+                                </div>
+
+                                <div class="description-container">
+                                    <div class="titre">Description de la serie</div>
+                                    <p th:text="${serie.descriptionSerie}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ratione nesciunt autem, numquam, ad quidem ipsam tenetur eligendi a enim voluptatibus mollitia impedit dignissimos similique saepe voluptate maxime sequi harum?
+                                    Obcaecati suscipit, sequi, excepturi fugiat eius molestias non cupiditate nobis omnis ratione modi ab nostrum dolorum vitae. Laboriosam accusantium accusamus deleniti neque eum, placeat praesentium nobis molestias id omnis quae.</p>
+                                </div>
+        
+                                <div class="episode-container">
+                                    <header>
+                                        <span  th:text="${serie.titre}+' '+${saison.titre}+' '+${episode.titre}">
+                                            How To Sell Drugs Online (Fast) Saison 1 épisode 2
+                                        </span>
+                                    </header>
+                                  
+                                    <video class="baliseSerieVideo"  poster="img/logoVideo.png"  controlsList="nodownload" id="baliseSerieVideo" controls></video>
+                                    <div class="controls-container">
+                                        <button id="serieBtnEpisodePrecedent">
+                                            <i class="fa-solid fa-arrow-left"></i>
+                                           <span> Ep precedent</span>
+                                        </button>
+        
+                                       
+                                        <div class="dropdown" id="selectSerieSaisons">
+                                            <div class="select">
+                                                    <span class="selected" th:text="${saison.titre}" >Saison 1</span>
+                                                    <div class="caret"></div>
+                                            </div>
+                                            <ul class="menu">
+                                                <li th:each="s :${saisons}" th:attr="data-value=${s.idSaison}" >
+                                                    <span th:text="${s.titre}">saison 1</span>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                       
+        
+                                        <div class="dropdown" id="selectSerieEpisodes">
+                                            <div class="select">
+                                                    <span class="selected" th:text="${episode.titre}">episode 1</span>
+                                                    <div class="caret"></div>
+                                            </div>
+                                            <ul class="menu">
+                                                <li th:each="e : ${episodes}" th:attr="data-value=${e.numero}" >
+                                                    <span th:text="${e.titre}">episode 1</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+        
+                                        <button id="serieBtnEpisodeSuivant">
+                                           <span> Ep suivant</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+        
+                               </div>
+
+                               <div class="serie-content hidden inner-content" data-linkItem="animesLinkItem" data-vuePrecedent="animesContent" id="animeContent">
+                                <div class="presentation-container">
+                                    <div class="info-container">
+                                        <div class="titre" th:text="'Regarder la serie '+${serie.titre}">How To Sell Drugs Online (fast)</div>
+                                       
+                                            <img src="../static/imgs/serie-how-to-sell-drugs-online-(fast).jpg" th:src="@{'/img/'+${serie.imageCover.idStreamFile}}" alt="imageCover">
+                                            <div class="info-detail">
+                                                <div class="info-block">
+                                                    <span >Annee</span>
+                                                   <span th:text="${serie.annee}">2023</span>
+                                                </div>
+                                                <div class="info-block">
+                                                   <span>Temps</span>
+                                                   <span th:text="${serie.temps}">2hr40min</span>
+                                                </div>
+                                                <div class="info-block">
+                                                   <span>Genre</span>
+                                                   <span th:text="${serie.genre}">2023</span>
+                                                </div>
+                                                <div class="info-block">
+                                                    <span>Pays</span>
+                                                    <span th:text="${serie.pays}">2023</span>
+                                                </div>
+                                            </div>
+                                    </div>
+                                   
+                                </div>
+
+                                <div class="description-container description-serie">
+                                    <div class="titre">Description de l'anime</div>
+                                    <p th:text="${serie.descriptionSerie}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ratione nesciunt autem, numquam, ad quidem ipsam tenetur eligendi a enim voluptatibus mollitia impedit dignissimos similique saepe voluptate maxime sequi harum?
+                                    Obcaecati suscipit, sequi, excepturi fugiat eius molestias non cupiditate nobis omnis ratione modi ab nostrum dolorum vitae. Laboriosam accusantium accusamus deleniti neque eum, placeat praesentium nobis molestias id omnis quae.</p>
+                                </div>
+        
+                                <div class="saisons-container">
+                                    <header>
+                                        <span>Toutes les saisons</span>
+                                    </header>
+                                    <div class="separator"></div>
+                                    <main id="animeSaisonsItemContainer">
+                                            <button class="saison-item" th:each="saison :${saisons}">
+                                               <a href="#" th:href="@{'/hubstream/serie/saison/'+${saison.idSaison}}" th:text="${saison.titre}">saison 1</a>
+                                            </button>
+                                           
+        
+                                    </main>
+                                </div>
+                               </div>
+
+                               <div class="serie-se-content hidden inner-content" data-linkItem="animesLinkItem" data-vuePrecedent="animeContent" id="animeSeContent">
+                                <div class="presentation-container">
+                                    <div class="info-container">
+                                        <div class="titre" th:text="'Regarder la serie '+${serie.titre}">How To Sell Drugs Online (fast)</div>
+                                       
+                                            <img src="../static/imgs/serie-how-to-sell-drugs-online-(fast).jpg" th:src="@{'/img/'+${serie.imageCover.idStreamFile}}" alt="imageCover">
+                                            <div class="info-detail">
+                                                <div class="info-block">
+                                                    <span >Annee</span>
+                                                   <span th:text="${serie.annee}">2023</span>
+                                                </div>
+                                                <div class="info-block">
+                                                   <span>Temps</span>
+                                                   <span th:text="${serie.temps}">2hr40min</span>
+                                                </div>
+                                                <div class="info-block">
+                                                   <span>Genre</span>
+                                                   <span th:text="${serie.genre}">2023</span>
+                                                </div>
+                                                <div class="info-block">
+                                                    <span>Pays</span>
+                                                    <span th:text="${serie.pays}">2023</span>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    
+                                    
+                                </div>
+
+                                <div class="description-container">
+                                    <div class="titre">Description de l'anime</div>
+                                    <p th:text="${serie.descriptionSerie}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ratione nesciunt autem, numquam, ad quidem ipsam tenetur eligendi a enim voluptatibus mollitia impedit dignissimos similique saepe voluptate maxime sequi harum?
+                                    Obcaecati suscipit, sequi, excepturi fugiat eius molestias non cupiditate nobis omnis ratione modi ab nostrum dolorum vitae. Laboriosam accusantium accusamus deleniti neque eum, placeat praesentium nobis molestias id omnis quae.</p>
+                                </div>
+        
+                                <div class="saisons-container">
+                                    <header>
+                                        <span th:text="'Liste des episodes de la '+${saison.titre}+' de '+${serie.titre}">
+                                            Liste des episodes de How To Sell Drugs Online (Fast) Saison 1 
+                                        </span>
+                                    </header>
+                                    <div class="separator"></div>
+                                    <main id="animeEpisodesItemContainer">
+                                            <button class="episode-item" th:each="episode :${episodes}">
+                                                <a href="#" th:href="@{'/hubstream/serie/'+${saison.idSaison}+'/'+${episode.numero}}" th:text="${episode.titre}">episode 1</a>
+                                            </button> 
+                                    </main>
+                                </div>
+                               </div>
+
+                               <div class="serie-episode-content hidden inner-content" data-linkItem="animesLinkItem" data-vuePrecedent="animeSeContent" id="animeEpisodeContent">
+                                <button class="download-btn" id="downloadAnimeEpisodeBtn">
+
+                                    <i class="fa-solid fa-download"></i>
+                                 </button>
+                                <div class="presentation-container">
+                                    <div class="info-container">
+                                        <div class="titre" th:text="'Regarder la serie '+${serie.titre}">How To Sell Drugs Online (fast)</div>
+                                       
+                                            <img src="../static/imgs/serie-how-to-sell-drugs-online-(fast).jpg" th:src="@{'/img/'+${serie.imageCover.idStreamFile}}" alt="imageCover">
+                                            <div class="info-detail">
+                                                <div class="info-block">
+                                                    <span >Annee</span>
+                                                   <span th:text="${serie.annee}">2023</span>
+                                                </div>
+                                                <div class="info-block">
+                                                   <span>Temps</span>
+                                                   <span th:text="${serie.temps}">2hr40min</span>
+                                                </div>
+                                                <div class="info-block">
+                                                   <span>Genre</span>
+                                                   <span th:text="${serie.genre}">2023</span>
+                                                </div>
+                                                <div class="info-block">
+                                                    <span>Pays</span>
+                                                    <span th:text="${serie.pays}">2023</span>
+                                                </div>
+                                            </div>
+                                    </div>
+                                   
+                                    
+                                </div>
+
+                                <div class="description-container">
+                                    <div class="titre">Description de l'anime</div>
+                                    <p th:text="${serie.descriptionSerie}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ratione nesciunt autem, numquam, ad quidem ipsam tenetur eligendi a enim voluptatibus mollitia impedit dignissimos similique saepe voluptate maxime sequi harum?
+                                    Obcaecati suscipit, sequi, excepturi fugiat eius molestias non cupiditate nobis omnis ratione modi ab nostrum dolorum vitae. Laboriosam accusantium accusamus deleniti neque eum, placeat praesentium nobis molestias id omnis quae.</p>
+                                </div>
+        
+                                <div class="episode-container">
+                                    <header>
+                                        <span  th:text="${serie.titre}+' '+${saison.titre}+' '+${episode.titre}">
+                                            How To Sell Drugs Online (Fast) Saison 1 épisode 2
+                                        </span>
+                                    </header>
+                                  
+                                    <video  class="baliseSerieVideo" id="baliseAnimeVideo"   controls  poster="img/logoVideo.png"  controlsList="nodownload"></video>
+                                    <div class="controls-container">
+                                        <button id="animeBtnEpisodePrecedent">
+                                            <i class="fa-solid fa-arrow-left"></i>
+                                           <span> Ep precedent</span>
+                                        </button>
+        
+                                       
+                                        <div class="dropdown" id="selectAnimeSaisons">
+                                            <div class="select">
+                                                    <span class="selected" th:text="${saison.titre}" >Saison 1</span>
+                                                    <div class="caret"></div>
+                                            </div>
+                                            <ul class="menu">
+                                                <li th:each="s :${saisons}" th:attr="data-value=${s.idSaison}" >
+                                                    <span th:text="${s.titre}">saison 1</span>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                       
+        
+                                        <div class="dropdown" id="selectAnimeEpisodes">
+                                            <div class="select">
+                                                    <span class="selected" th:text="${episode.titre}">episode 1</span>
+                                                    <div class="caret"></div>
+                                            </div>
+                                            <ul class="menu">
+                                                <li th:each="e : ${episodes}" th:attr="data-value=${e.numero}" >
+                                                    <span th:text="${e.titre}">episode 1</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+        
+                                        <button id="animeBtnEpisodeSuivant">
+                                           <span> Ep suivant</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+        
+                               </div>
+
+                               <div class="plans-content hidden inner-content" id="plansContent">
+                                <div class="container">
+
+                                    <div class="container-onglets">
+                                       
+                                        <div class="onglets activeOnglet" id="ongletPlanActif" data-anim="1">Plans actif</div>
+                                        <div class="onglets " id="ongletPlans" data-anim="2">Activer un plan</div>
+                                    </div>
+        
+                                    <!-- <div class="contenu contenu-flex activeContenu" id="planActifContenu" data-anim="1" th:if="${plansActif==null || plansActif.size() == 0}">
+                                            <p class="messageToUser"> 
+                                                Vous n'avez aucun plan actif
+                                            </p>
+                                            <div id="plan-actifs-container">
+                                                <div class="actif-card" th:each="planActif :${plansActif}">
+                                                    <div class="titre">
+                                                         <span>Plan:</span>
+                                                         <span th:text="${planActif.activerPlan.plan.titre}+' |'">Film-H4 </span>
+                                                         <span th:text="${planActif.activerPlan.plan.getFormatPrix()}+' HTG'">25 HTG</span>
+                                                    </div>
+                                                    <div class="partie-details-plan">
+                                                        <div class="ligne">
+                                                            <span class="titre">Contenu:</span>
+                                                            <span class="value" th:text="${planActif.activerPlan.plan.type}">4 Heures</span>
+                                                        </div>
+                                                        <div class="ligne">
+                                                            <span class="titre">Duree:</span>
+                                                            <span class="value" th:text="${planActif.activerPlan.plan.duree}+' '+${planActif.activerPlan.plan.dureeExtension}">4 Heures</span>
+                                                        </div>
+                                                       
+                                                   </div>
+                                                    <div class="partie-temps">
+                                                         <div class="ligne">
+                                                             <span class="titre">Activé </span>
+                                                             <span class="value" th:text="${planActif.dateDebut}">09/11/2023</span>
+                                                             <span class="titre">à </span>
+                                                             <span class="value" th:text="${planActif.heureDebut}">09:54 AM</span>
+                                                         </div>
+                                                         <div class="ligne">
+                                                             <span class="titre">Expire </span>
+                                                            <span class="value" th:text="${planActif.dateExpiration}"> Aujourd'hui</span>
+                                                             <span class="titre">à </span>
+                                                             <span class="value" th:text="${planActif.heureExpiration}">10:54 AM</span>
+                                                         </div>
+                                                    </div>
+                                 
+                                                 </div>
+                                            </div> 
+                
+                                    </div> -->
+        
+                                    <div class="contenu-p activeContenu" id="planActifContenu" data-anim="1">
+                                      
+                                      
+                                       <div class="plan-actifs-container" id="plan-actifs-container">
+                                            <div class="the-container">
+                                                
+                                                  
+                                                    
+                                            </div>
+        
+                                                  <!-- <div class="actif-card" th:each="planActif :${plansActif}">
+                                                    <div class="titre">
+                                                         <span>Plan:</span>
+                                                         <span th:text="${planActif.activerPlan.plan.titre}+' |'">Film-H4 </span>
+                                                         <span th:text="${planActif.activerPlan.plan.getFormatPrix()}+' HTG'">25 HTG</span>
+                                                    </div>
+                                                    <div class="partie-details-plan">
+                                                        <div class="ligne">
+                                                            <span class="titre">Contenu:</span>
+                                                            <span class="value" th:text="${planActif.activerPlan.plan.type}">4 Heures</span>
+                                                        </div>
+                                                        <div class="ligne">
+                                                            <span class="titre">Duree:</span>
+                                                            <span class="value" th:text="${planActif.activerPlan.plan.duree}+' '+${planActif.activerPlan.plan.dureeExtension}">4 Heures</span>
+                                                        </div>
+                                                       
+                                                   </div>
+                                                    <div class="partie-temps">
+                                                         <div class="ligne">
+                                                             <span class="titre">Activé </span>
+                                                             <span class="value" th:text="${planActif.dateDebut}">09/11/2023</span>
+                                                             <span class="titre">à </span>
+                                                             <span class="value" th:text="${planActif.heureDebut}">09:54 AM</span>
+                                                         </div>
+                                                         <div class="ligne">
+                                                             <span class="titre">Expire </span>
+                                                            <span class="value" th:text="${planActif.dateExpiration}"> Aujourd'hui</span>
+                                                             <span class="titre">à </span>
+                                                             <span class="value" th:text="${planActif.heureExpiration}">10:54 AM</span>
+                                                         </div>
+                                                    </div>
+                                 
+                                                  </div> -->
+                                            </div>
+                                       </div> 
+                                    </div> 
+        
+                                    <div class="contenu-p" id="plansContenu" data-anim="2">
+                                    
+                                        <!-- <div class="dropdown-container" id="plans-film">
+                                                <div class="entete"  >
+                                                <span> Plans Film</span>
+                                                
+                                                    <i class=" fa-solid fa-square-plus" id="plans-film-btn" data-etat="0"></i>
+                                                </div>
+                                                <div class="corp">
+                                                    <div class="card-plan-container" id="filmCardPlanContainer">
+                                                                
+                                                            
+                                                        <div class="card-plan" th:each="plan : ${plansAll}">
+                                                            <div class="head-card">
+                                                                <h3 th:text="${plan.titre}">Film-J1</h3>
+                                                            </div>
+                                                            <div class="body-card">
+                                                                    <div class="ligne">
+                                                                        <span class="titre">Duree</span>
+                                                                        <span class="value" th:text="${plan.duree}+' '+${plan.dureeExtension}">1 Jour</span>
+                                                                    </div>
+    
+                                                                    <div class="ligne">
+                                                                        <span class="titre">Points</span>
+                                                                        <span class="value" th:text="${plan.getPoints()}+' pts'">7 pts</span>
+                                                                    </div>
+    
+                                                                    <div class="ligne">
+                                                                        <span class="titre">Prix</span>
+                                                                        <span class="value" th:text="${plan.getFormatPrix()}+' HTG'">50 HTG</span>
+                                                                    </div>
+                                                                    <button >Activer</button>
+                                                            </div>
+                                                        </div>
+    
+
+                                                            
+        
+                                        
+                                                    </div>
+                                                </div>
+                                        </div> -->
+        
+                                            <!-- <div class="dropdown-container" id="plans-serie">
+                                                <div class="entete" >
+                                                <span> Plans Serie</span>
+                                                
+                                                    <i class=" fa-solid fa-square-plus"  id="plans-serie-btn" data-etat="0"></i>
+                                                </div>
+                                                <div class="corp">
+                                                        <div class="card-plan-container" id="serieCardPlanContainer">
+                                                                
+                                                            
+                                                            <div class="card-plan" th:each="plan : ${plansAll}">
+                                                                <div class="head-card">
+                                                                    <h3 th:text="${plan.titre}">Serie-J1</h3>
+                                                                </div>
+                                                                <div class="body-card">
+                                                                        <div class="ligne">
+                                                                            <span class="titre">Duree</span>
+                                                                            <span class="value" th:text="${plan.duree}+' '+${plan.dureeExtension}">1 Jour</span>
+                                                                        </div>
+        
+                                                                        <div class="ligne">
+                                                                            <span class="titre">Points</span>
+                                                                            <span class="value" th:text="${plan.getPoints()}+' pts'">7 pts</span>
+                                                                        </div>
+        
+                                                                        <div class="ligne">
+                                                                            <span class="titre">Prix</span>
+                                                                            <span class="value" th:text="${plan.getFormatPrix()}+' HTG'">50 HTG</span>
+                                                                        </div>
+                                                                        <button >Activer</button>
+                                                                </div>
+                                                            </div>
+        
+        
+                                        
+                                                        </div>
+                                                </div>
+                                            </div> -->
+        
+        
+                                            <!-- <div class="dropdown-container" id="plans-anime">
+                                                <div class="entete" >
+                                                <span> Plans Anime</span>
+                                                
+                                                    <i class=" fa-solid fa-square-plus" id="plans-anime-btn" data-etat="0"></i>
+                                                </div>
+                                                <div class="corp">
+                                                            <div class="card-plan-container" id="animeCardPlanContainer">
+                                                                    
+                                                                
+                                                                <div class="card-plan" th:each="plan : ${plansAll}">
+                                                                    <div class="head-card">
+                                                                        <h3 th:text="${plan.titre}">Anime-J1</h3>
+                                                                    </div>
+                                                                    <div class="body-card">
+                                                                            <div class="ligne">
+                                                                                <span class="titre">Duree</span>
+                                                                                <span class="value" th:text="${plan.duree}+' '+${plan.dureeExtension}">1 Jour</span>
+                                                                            </div>
+            
+                                                                            <div class="ligne">
+                                                                                <span class="titre">Points</span>
+                                                                                <span class="value" th:text="${plan.getPoints()}+' pts'">7 pts</span>
+                                                                            </div>
+            
+                                                                            <div class="ligne">
+                                                                                <span class="titre">Prix</span>
+                                                                                <span class="value" th:text="${plan.getFormatPrix()}+' HTG'">50 HTG</span>
+                                                                            </div>
+                                                                            <button >Activer</button>
+                                                                    </div>
+                                                                </div>
+            
+        
+                                            
+                                                            </div>
+                                                </div>
+                                            </div> -->
+        
+        
+                                            <div class="dropdown-container" id="plans-all">
+                                                <div class="entete" >
+                                                <span> Plans All</span>
+                                                
+                                                    <i class=" fa-solid fa-square-plus" id="plans-all-btn" data-etat="0"></i>
+                                                </div>
+                                                <div class="corp">
+                                                        <div class="card-plan-container" id="allCardPlanContainer">
+                                                                
+                                                            
+                                                            <div class="card-plan" th:each="plan : ${plansAll}">
+                                                                <div class="head-card">
+                                                                    <h3 th:text="${plan.titre}">All-J1</h3>
+                                                                </div>
+                                                                <div class="body-card">
+                                                                        <div class="ligne">
+                                                                            <span class="titre">Duree</span>
+                                                                            <span class="value" th:text="${plan.duree}+' '+${plan.dureeExtension}">1 Jour</span>
+                                                                        </div>
+        
+                                                                        <div class="ligne">
+                                                                            <span class="titre">Points</span>
+                                                                            <span class="value" th:text="${plan.getPoints()}+' pts'">9 pts</span>
+                                                                        </div>
+        
+                                                                        <div class="ligne">
+                                                                            <span class="titre">Prix</span>
+                                                                            <span class="value" th:text="${plan.getFormatPrix()}+' HTG'">65 HTG</span>
+                                                                        </div>
+                                                                        <button >Activer</button>
+                                                                </div>
+                                                            </div>
+        
+                                        
+                                                        </div>
+                                                </div>
+                                            </div>
+        
+        
+        
+                                        
+                                    </div>
+        
+                                    
+        
+                                   
+        
+        
+                                </div>
+        
+                                <div class="popup-container">
+                                        <div class="popup">
+                                            <p>Voulez vous activer ce plan ?</p>
+                                            <div class="buttons">
+                                                <button id="argentBtn">oui</button>
+                                                <button id="pointBtn">non</button>    
+                                            </div>
+                                        </div>
+                                </div>
+                        </div>
+
+
+                </div>
+            <!-- </div> -->
+    </div>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/utilitaire.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/hubPlans.js"></script>
+    <script src="js/homeContent.js"></script>
+    <script src="js/baseLayout.js"></script>
+    <script src="js/inscription&Login.js"></script>
+    <script src="js/hubNotifications.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/onglet.js"></script>
+    <script src="js/listeDeroulante.js"></script>
+    <script src="js/popupCompte.js"></script>
+    <script src="js/transfert.js"></script>
+    <script src="js/gestionSearch.js"></script>
+    <script src="js/afficherDetailContenus.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/navSearch.js"></script>
+    <script src="js/download.js"></script>
+   
+    
+
+    <!-- <script>
+      
+      const chaineOriginale = "American Pie";
+      hashString(chaineOriginale).then(hashedString => {
+        console.log("Chaîne hachée avec SHA-256:", hashedString);
+
+         hashString(chaineOriginale).then(hashedString2 => {
+       
+            console.log(`Chaine 1 : ${hashedString}    Chaine 2 : ${hashedString2}`)
+        
+         });
+      });
+    </script> -->
+</body>
+</html>

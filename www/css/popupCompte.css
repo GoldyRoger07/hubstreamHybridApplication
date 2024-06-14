@@ -1,0 +1,176 @@
+
+.popup-compte-container{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000000a4;
+    z-index: 101;
+}
+
+.popup-compte-container .popup-compte,
+.popup-compte-container .popup-change-password{
+    /* background: #202123; */
+    background: #161616;
+    border-radius: 15px;
+    min-width: 300px;
+    width: 450px;
+}
+
+/* .popup-change-password .confirm-box{
+    
+} */
+
+.popup-compte-container .popup-change-password{
+    width: 300px;
+}
+
+
+
+.popup-compte-container .popup-header{
+    padding: 15px;
+    padding-top: 20px;
+    border-bottom:1px solid #323335;
+   
+    /* background: #000; */
+}
+
+
+
+.popup-compte-container .popup-header > div{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.popup-compte-container .popup-title{
+    font-weight: bold;
+    color: #fff;
+    font-size: 19px;
+}
+
+.popup-change-password .popup-header .popup-title{
+        font-size: 16px;
+}
+
+.popup-compte-container .popup-header button{
+    border:0;
+    background: transparent;
+    
+}
+
+.popup-compte-container .popup-header button i{
+    font-size: 18px;
+    color: #c5c5d2;
+}
+
+
+
+.popup-compte-container .popup-body{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    /* padding-top: 35px; */
+}
+
+.popup-compte-container .popup-body-line{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding-top: 10px;
+    padding-bottom: 15px;
+    */
+}
+
+.popup-compte-container .popup-body-title{
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.popup-change-password .popup-body-title{
+    font-size: 12px;
+}
+
+
+
+.popup-compte-container .popup-body-line:not(:last-child){
+    border-bottom:1px solid #28292b;
+}
+
+.popup-compte-container .popup-body-line:last-child{
+    padding-top: 10px;
+    /* padding-bottom: 15px; */
+
+}
+
+.popup-compte-container .popup-body-value{
+    width: 40%;
+    color: #fff;
+    text-align: end;
+    font-weight: bold;
+}
+
+.popup-compte-container .popup-body-value input{
+    border: 2px solid #161616;
+    background: none;
+    width: 100%;
+    color: #fff;
+    text-align: end;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    font-weight: bold;
+
+   
+}
+
+
+
+.popup-compte-container .popup-body-value input:focus,
+.popup-compte-container .popup-body-value input:hover{
+    background: #161616;
+    border: 2px solid #0b0b0b;
+
+}
+
+.popup-compte-container .popup-body-value button{
+    border: none;
+    padding: 15px;
+    font-size: 14px;
+    border-radius: 10px;
+    /* background: #b91c1c; */
+    background: #f00;
+    font-weight: bold;
+    color: #fff;
+}
+
+.popup-compte-container .popup-body-value button:hover{
+    background: rgb(225, 0, 0);
+}
+
+.popup-compte-container .popup-body-value .solde{
+    cursor:default;
+}
+
+.popup-compte-container .popup-body-value .solde,
+.popup-compte-container .popup-body-title.solde{
+    padding: 10px 0;
+}
+
+.hidden-popup{
+    display: none;
+}
+
+@media screen and (width<=460px) {
+    .popup-compte-container .popup-compte{
+        width: 95%;
+    }
+
+    
+}
+

@@ -1,0 +1,429 @@
+
+.layer{
+    height: 100%;
+    width: 100%;
+}
+
+/* Welcome Part */
+.welcome-content{  
+    display: flex;
+    justify-content: center;
+   
+}
+
+
+.welcome-content img{
+    width: 64px;
+    
+}
+
+.welcome-content h1{
+    color: #f00;
+}
+
+.logo-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+    /* animation: logo-animation 2s; */
+}
+
+.out-animation{
+    animation: page-out-animation 150ms forwards;
+}
+
+
+@keyframes page-out-animation {
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    70%{
+        opacity: 0.2;
+       
+    }
+
+    100%{
+        transform: scale(2);
+        opacity: 0;
+    }
+
+}
+
+@keyframes logo-animation {
+    0%{
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    30%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+/* End Welcome Part */
+
+
+/* Login Part */
+.login-content{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding:0 20px;
+
+}
+
+/* .newContainer{
+    position: relative;
+    width: 400px;
+    background: #352727;
+    z-index: 1;
+    padding: 30px 30px;
+    display: flex;
+   flex-direction: column;
+
+} */
+
+.newContainer{
+    /* position: relative; */
+    min-width: 300px;
+    width: 100%;
+    /* background: #352727; */
+    z-index: 1;
+    padding: 30px 0px;
+    padding-top: 0;
+    height: 100%;
+    display: flex;
+   flex-direction: column;
+  
+
+}
+
+.login-content .newContainer{
+    height: auto;
+}
+
+ .newContainer img{
+   
+    margin: auto;
+    margin-bottom: 50px;
+    width: 64px;
+
+   
+}
+
+.login-content header{
+    font-size: 40px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #303030;
+   text-align: center;
+
+}
+
+
+
+.login-content .input-field,.login-content form .button{
+    margin: 25px 0;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    /* background: #c05757; */
+    border-radius: 3px;
+}
+
+.login-content .input-field input{
+    height: 100%;
+    width: 100%;
+    border: 1px solid silver;
+    padding:0px 15px;
+    outline: none;
+    font-size: 17px;
+    transition: .3s;
+    border-radius: 3px;
+    /* background: #000; */
+
+}
+
+.login-content .input-field input:focus{
+    border: 1px solid  #ff0000;
+}
+
+.login-content .input-field label{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: grey;
+    font-size: 17px;
+    transition: .3s;
+}
+
+.login-content .input-field input:focus ~ label,
+.login-content .input-field input:valid ~ label{
+    transform: translateY(-33px);
+    background: #fff;
+    padding-left:5px;
+    padding-right:5px;
+    font-size: 15px;
+    /* color:#303030; */
+}
+
+.login-content form button{
+    width: 100%;
+    padding: 18px 0;
+    background: #ff0000;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 17px;
+}
+
+.login-content .my-p{
+    margin:10px 0;
+    text-align: start;
+    color:#303030;
+}
+
+.login-content .url-p{
+    margin:10px 0;
+    text-align: start;
+    color:#303030;
+}
+
+.login-content .url-p span{
+    color: #ff0000;
+    border: none;
+    background: transparent;
+}
+
+
+.login-content .my-p a{
+    text-decoration: none;
+    color: #ff0000;
+}
+
+
+
+
+@media screen and (width <= 363px){
+   .login-content header{
+        font-size: 34px;
+    }
+
+
+}
+
+
+/* End Login Part */
+
+/* Inscription Part */
+
+.inscription-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.inscription-content .option-back{
+    /* background: #af7979; */
+   
+    height: 25px;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    color:#646464;
+    cursor: pointer;
+    margin-bottom: 40px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.inscription-content .option-back button{
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    background: transparent;
+    outline: none;
+    color:#646464;
+}
+
+.submit-btn3{
+    margin-top: 10px;
+}
+
+
+
+.inscription-section{
+    width: 100%;
+   
+    padding:0 20px;
+    transition: transform 200ms;
+    overflow: hidden;
+}
+
+.inscription-section header{
+    font-size: 25px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color: #303030;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.inscription-section .input-field,.inscription-section form .button{
+    margin: 20px 0;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    /* background: #c05757; */
+    border-radius: 3px;
+}
+
+.inscription-section .input-field input{
+    height: 100%;
+    width: 100%;
+    border: 1px solid silver;
+    padding:0px 15px;
+    outline: none;
+    font-size: 15px;
+    transition: .3s;
+    border-radius: 3px;
+
+}
+
+.inscription-section .input-field input:focus{
+    border: 1px solid  #ff0000;
+}
+
+.inscription-section .input-field label{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: grey;
+    font-size: 17px;
+    transition: .3s;
+}
+
+.inscription-section .input-field input:focus ~ label,
+.inscription-section .input-field input:valid ~ label{
+
+    transform: translateY(-33px);
+    background: #fff;
+    padding-left:5px;
+    padding-right:5px;
+    font-size: 15px;
+    color:#303030;
+}
+
+.inscription-section form button{
+    width: 100%;
+    padding: 18px 0;
+    background: #ff0000;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 17px;
+}
+
+.inscription-section .message-password{
+    text-align: start;
+    margin-bottom: 10px;
+    color: #fff;
+    /* color: #4ec200; */
+    /* background: #e90000; */
+    /* background: #4ec200; */
+    /* padding: 0px 10px; */
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+
+
+.inscription-section  .newContainer .option-back{
+    /* background: #af7979; */
+   
+    height: 25px;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    color:#646464;
+    cursor: pointer;
+    margin-bottom: 40px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.inscription-section  .newContainer .option-back button{
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    background: transparent;
+    outline: none;
+    color:#646464;
+
+}
+
+/* .inscription-page main .newContainer .option-back button i{
+    margin-right: auto;
+} */
+
+
+
+
+@media screen and (width <= 364px){
+   .inscription-section header{
+        font-size: 7.15vw;
+        
+    }
+}
+
+/* End Inscription Part */
+
+
+/* Animations Page */
+
+.slide-to-left{
+    animation: left-transition 200ms;
+}
+
+.slide-to-right{
+    animation: right-transition 200ms;
+}
+
+@keyframes left-transition{
+    from{
+            transform: translateX(100%);
+    }to{
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes right-transition{
+    from{
+            transform: translateX(100%);
+    }to{
+        transform: translateX(200%);
+    }
+}
+
+/* End Animations Page */

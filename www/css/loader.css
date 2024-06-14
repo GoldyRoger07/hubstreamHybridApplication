@@ -1,0 +1,37 @@
+.my-loader-container {
+    display: none;
+    /* display: block; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 2, 2, 0.177); 
+    z-index: 9999; /* S'assurer que le loader est au-dessus de tout le reste */
+  }
+  
+  .my-loader {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    border: 4px solid #f3f3f3; /* Couleur des bordures */
+    border-top: 4px solid #ff0000; /* Couleur de la bordure supérieure */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 900ms ease-in-out infinite; /* Animation de rotation */
+  }
+
+  .watcher{
+    width: 2px;
+    height: 2px;
+    opacity: 0;
+    /* background: #7d0808; */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

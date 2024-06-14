@@ -1,0 +1,131 @@
+.contenus-download-container{
+  
+    overflow-y: auto;
+    /* background: #000; */
+    /* padding:0 10px; */
+    width: 100%;
+    /* background: #000; */
+    height: calc(100% - 90px);
+}
+
+.contenus-download-container .the-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  
+}
+
+
+.contenus-download-container::-webkit-scrollbar-thumb{
+    background: transparent;
+}
+
+.contenus-download-container::-webkit-scrollbar{
+    width: 0px;
+    background: transparent;
+}
+
+
+/* 
+
+
+  <div class="download-item">
+        <div class="first-section">
+                    <div class="icon-container">
+                             <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="details-section">
+                                <span class="download-title-item">John Wick Chapitre 4</span>
+                                div
+                    </div>
+        </div>
+        <button>
+                ...
+        </button>
+ </div>
+
+
+*/
+
+.download-item{
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    padding: 10px;
+    transition: background 0.4s ease-in-out;
+}
+
+.download-item.active{
+    background: #0d0d0d;
+}
+
+.download-item button{
+    background: none;
+    border: 0;
+    color: rgb(150, 148, 148);
+   
+    font-size: 18px;
+}
+
+.download-item button.disabled i{
+    color: rgb(69, 69, 69);
+    transition: 0.5s
+}
+
+.download-item .first-section{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+   
+    gap: 10px;
+    align-items: center;
+   
+}
+
+.download-item .icon-container{
+    height: 50px;
+    /* background: #747476; */
+    border: 1px solid rgb(150, 148, 148);
+    color:  rgb(150, 148, 148);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.download-item .details-section{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    color:  rgb(150, 148, 148);
+   
+}
+
+.download-item .details-section div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+}
+
+.download-item .details-section div .point-separator{
+    width: 5px;
+    height: 5px;
+    background:  rgb(150, 148, 148);
+    border-radius: 50%;
+}
+
+.download-item .details-section .download-title-item{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.download-item .details-section .download-total-capacity{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.download-item .details-section .download-pourcentage{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+

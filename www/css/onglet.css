@@ -1,0 +1,180 @@
+
+.container{
+    width: 100%;
+    height: auto;
+    background: #111;
+    max-height: calc(100vh - 40px);
+    /* padding-top: 75px; */
+    display: grid;
+    grid-template-rows: 40px 1fr;
+}
+
+.container-onglets{
+    background: #0f0f0f;
+    border-bottom: 1px solid #000;
+    width: 100%;
+    display: grid;
+   /* padding: 0 5px; */
+    grid-template-columns: repeat(2,1fr);
+   
+}
+
+.downloads-content .container-onglets{
+    grid-template-columns: repeat(3,1fr);
+}
+
+.onglets{
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: #c5c5d2
+}
+
+
+
+.contenu-p{
+    /* min-height: 80vh; */
+    height: calc(100vh - 60px);
+    width: 100%;
+    /* position: absolute; */  
+    opacity: 0;
+    display: none;
+    /* padding: 10px; */
+    overflow-y: hidden;
+ 
+}
+
+#plansContenu{
+    padding: 10px;
+    overflow-y: auto;
+    height: calc(100vh - 90px);
+}
+
+.contenu-p.contenu-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contenu-p .messageToUser{
+    text-align: center;
+   
+}
+
+.contenu-p::-webkit-scrollbar{
+    width: 0px;
+}
+
+.contenu-p::-webkit-scrollbar-thumb{
+    background: transparent;
+}
+
+
+
+
+
+.activeOnglet{
+    color: #f00;
+    border-bottom: solid 2px #f00;
+    font-weight: bold;
+    /* background: #0c0c0c; */
+    
+}
+
+.activeContenu{
+    animation: fade 0.5s forwards;
+    display: block;
+}
+
+@keyframes fade {
+    from{
+        opacity: 0;
+       
+    }
+
+    to{
+        opacity: 1;
+        
+    }
+}
+
+.card-plan-container{
+
+    display: grid;
+    gap: 15px;    
+    grid-template-columns: repeat(auto-fill,minmax(180px, 1fr));
+    padding: 10px 0;
+}
+
+.head-card{
+    background: #0b0b0b;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px;
+}
+
+.body-card{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.card-plan{
+    /* padding: 10px; */
+    background: #0f0f0f;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #000;
+    color: #c5c5d2;
+}
+
+.card-plan h3{
+    color: #c5c5d2;
+}
+
+.card-plan hr{
+    background: #ff0000;
+    /* color: #000; */
+    border:0;
+    height: 2px;
+}
+
+.ligne{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0
+}
+
+.ligne .titre{
+    font-weight: bold;
+
+}
+
+.ligne .value{
+    font-size: 15px;
+}
+
+
+.card-plan button{
+    margin-left: auto;
+    padding: 5px 20px;
+    border-radius: 5px;
+    border:0;
+    background: #f00;
+    color: rgb(13, 13, 13);
+    /* border-bottom:2px solid rgb(255, 0, 0); */
+    font-weight: bold;
+    margin-left: auto;
+    
+}
+
+
+@media screen and (width<=430px) {
+    .onglets{
+        font-size: 3.5vw;
+        
+    }
+}
+

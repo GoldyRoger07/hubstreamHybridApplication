@@ -1,0 +1,17 @@
+{
+  "name": "info.android.raikiris",
+  "version": "1.0.0",
+  "description": "this allow you to open a file with a specific app",
+  "cordova": {
+    "id": "info.android.raikiris",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Sonix",
+  "license": "ISC"
+}
