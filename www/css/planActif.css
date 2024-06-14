@@ -95,6 +95,11 @@
     /* width: 100%; */
 }
 
+.partie-details-plan .ligne:nth-child(3){
+   
+    gap: 45px;
+}
+
 .partie-details-plan .ligne .titre{
     font-size: 15px;
 }

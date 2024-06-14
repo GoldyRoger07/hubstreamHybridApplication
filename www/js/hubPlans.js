@@ -73,7 +73,9 @@ function remplirPlanActifContainer(plansActif){
     plansActif.forEach(planActif=>{
         let div = document.createElement("div");
         div.classList.add("actif-card");
-
+        let livraisonValue = planActif.activerPlan.plan.livraison>0?
+        `${planActif.activerPlan.livraison}/${planActif.activerPlan.plan.livraison}`:"Aucune"
+        
         div.innerHTML=`
         <div class="titre">
                 <span>Plan:</span>
@@ -90,6 +92,11 @@ function remplirPlanActifContainer(plansActif){
                 <div class="ligne">
                     <span class="titre">Duree:</span>
                     <span class="value">${planActif.activerPlan.plan.duree} ${planActif.activerPlan.plan.dureeExtension}</span>
+                </div>
+
+                <div class="ligne">
+                    <span class="titre">Livraison(s):</span>
+                    <span class="value">${livraisonValue}</span>
                 </div>
       
         </div>
@@ -247,6 +254,11 @@ function displayPlans(){
                         <div class="ligne">
                             <span class="titre">Prix</span>
                             <span class="value">${plan.prix} HTG</span>
+                        </div>
+
+                        <div class="ligne">
+                            <span class="titre">Livraison(s)</span>
+                            <span class="value">${plan.livraison}</span>
                         </div>
                         <button onclick="openPopup(${plan.idPlan})">Activer</button>
                 </div>

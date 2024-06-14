@@ -374,10 +374,11 @@ function deconnexion(){
             window.location.reload()
             openOnePage('loginPage','previous')
             
-        }
+        }else
+            createToast("error","Vous etes hors ligne",null,'dark');
     }).
     catch(error=>{
-        createToast("error","Connecter vous au wifi Hubstream",null,'dark');
+        createToast("error","Vous etes hors ligne",null,'dark');
     })
     
 }
