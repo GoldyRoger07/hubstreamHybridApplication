@@ -1,5 +1,5 @@
 if(localStorage.getItem("onlineApiUrl")==null)
-    updateOnlineApiUrl("http://192.168.0.178:9001/api.online.hubstream.com")
+    updateOnlineApiUrl("https://192.168.0.178:9001/api.online.hubstream.com")
 
 
 const onlineApiUrl=getOnlineApiUrl()
